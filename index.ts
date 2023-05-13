@@ -29,10 +29,13 @@ const textEventHandler = async (event: WebhookEvent): Promise<MessageAPIResponse
   if (event.type !== 'message' || event.message.type !== 'text') {
     return;
   }
-
+  
   // Process all message related variables here.
   const { replyToken } = event;
   const { text } = event.message;
+  
+  console.log(JSON.stringify(event))
+  console.log("------------------------")
 
   // Create a new message.
   const response: TextMessage = {
